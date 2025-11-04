@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="64" viewBox="0 0 300 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="OnTheGo Auto Pro logo">
+  <rect width="300" height="64" rx="10" fill="white"/>
+  <g transform="translate(12,8)">
+    <!-- wrench icon -->
+    <path d="M10 6 L30 6 L36 0 L42 6 L36 12 L30 6 L10 6 z" fill="#b71c1c"/>
+    <rect x="24" y="12" width="8" height="36" rx="4" fill="#b71c1c"/>
+    <circle cx="28" cy="56" r="6" fill="#111"/>
+  </g>
+  <text x="90" y="36" font-family="Montserrat, sans-serif" font-weight="700" font-size="20" fill="#111">OnTheGo <tspan font-weight="800">Auto Pro</tspan></text>
+</svg>

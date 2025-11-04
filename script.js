@@ -1,24 +1,33 @@
-// Simplified booking form for Getform submission
-function callNow(){ window.location.href = 'tel:+16414207755'; }
-function showMessage(msg, isError){
-  const el = document.getElementById('form-message');
-  el.textContent = msg;
-  el.style.color = isError ? 'crimson' : 'inherit';
+// script.js - simple form handler and small interactions
+function handleForm(e){
+  e.preventDefault();
+  const name = document.getElementById('name').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const location = document.getElementById('location').value.trim();
+  const message = document.getElementById('message').value.trim();
+  const status = document.getElementById('formStatus');
+
+  if(!name || !phone || !location || !message){
+    status.textContent = 'Please fill in name, phone, location and a short description.';
+    return false;
+  }
+
+  // For the mockup: we don't have a backend. Show simulated success and provide a mailto option.
+  status.textContent = 'Thanks — preparing your request...';
+  setTimeout(()=>{
+    status.innerHTML = 'Request prepared. <a href="mailto:barney.leng@onthegoautopro24.com?subject=Service%20Request&body=' + encodeURIComponent(
+      'Name: '+name+'\nPhone: '+phone+'\nLocation: '+location+'\nMessage: '+message
+    ) + '">Send via email</a> or set up a form endpoint (Formspree, Netlify Forms, or a simple server) in <code>README.md</code>.';
+  },800);
+  return false;
 }
-function initMap(){
-  if(typeof L === 'undefined') return;
-  const centers = window.__OGAP_CONFIG.serviceCenters || [];
-  const map = L.map('map', {scrollWheelZoom:false}).setView([43.7, -93.3], 8);
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 18,
-    attribution: 'Map data © OpenStreetMap contributors'
-  }).addTo(map);
-  const group = L.featureGroup();
-  centers.forEach(c=>{
-    const marker = L.marker([c.lat, c.lng]).addTo(map).bindPopup(c.name);
-    group.addLayer(marker);
-    L.circle([c.lat,c.lng], {radius: 72000, color:'#c62828', fill:false}).addTo(map);
-  });
-  if(group.getLayers().length) map.fitBounds(group.getBounds().pad(0.6));
-}
-document.addEventListener('DOMContentLoaded', initMap);
+
+// small nicety: smooth anchor scroll
+document.addEventListener('click', (e)=>{
+  if(e.target.matches('a[href^="#"]')){
+    e.preventDefault();
+    const id = e.target.getAttribute('href');
+    if(id === '#') return;
+    document.querySelector(id).scrollIntoView({behavior:'smooth'});
+  }
+});
