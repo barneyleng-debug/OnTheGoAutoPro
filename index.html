@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>OnTheGo Auto Pro — Mobile Mechanic</title>
+  <meta name="description" content="OnTheGo Auto Pro — Fast, reliable mobile auto repair. We come to you in Clear Lake, IA; Faribault, MN and surrounding areas. Book now.">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <h1>OnTheGo Auto Pro</h1>
+        <p class="tag">Fast. Reliable. We Come To You.</p>
+      </div>
+      <div class="contact-quick">
+        <a class="call-btn" href="tel:+16414207755">Call Now: (641) 420-7755</a>
+        <a class="book-btn" href="#booking">Book Online</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h2>Mobile mechanic service — repairs, diagnostics, roadside help.</h2>
+          <p>We bring professional auto repair to your driveway, workplace, or roadside across Clear Lake, IA; Faribault, MN and the surrounding area.</p>
+          <div class="hero-ctas">
+            <a class="primary" href="#services">Our Services</a>
+            <a class="secondary" href="#booking">Get a Quote / Book</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img alt="OnTheGo Auto Pro mobile mechanic van" src="hero-van.jpg" onerror="this.style.display='none'">
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section services">
+      <div class="container">
+        <h3>Services — What we do</h3>
+        <p class="lead">From routine maintenance to emergency roadside repairs. Honest pricing, experienced techs, and fast response.</p>
+        <div class="service-grid">
+          <article class="service">
+            <h4>Diagnostics & Check Engine</h4>
+            <p>On-site diagnostics, OBD-II troubleshooting, and clear explanations of required repairs.</p>
+          </article>
+          <article class="service">
+            <h4>Brake Service</h4>
+            <p>Brake inspections, pad/shoe replacement, and emergency brake repairs.</p>
+          </article>
+          <article class="service">
+            <h4>Tire Repair & Replacement</h4>
+            <p>Puncture repair, tire change, flat repairs and on-site replacement when available.</p>
+          </article>
+          <article class="service">
+            <h4>Battery & Electrical</h4>
+            <p>Jump starts, battery replacement, alternator testing, and charging system repairs.</p>
+          </article>
+          <article class="service">
+            <h4>Oil Change & Tune-ups</h4>
+            <p>Quick oil changes, fluid top-offs, filters, and scheduled maintenance to keep you running.</p>
+          </article>
+          <article class="service">
+            <h4>Roadside Assistance</h4>
+            <p>Lockouts, towing coordination, minor on-site repairs to get you back on the road.</p>
+          </article>
+        </div>
+        <p class="note">Don't see your problem listed? Tell us — we usually handle most light-to-medium repairs on-site.</p>
+      </div>
+    </section>
+
+    <section id="service-area" class="section map-section">
+      <div class="container">
+        <h3>Service Area</h3>
+        <p class="lead">Primary coverage: Clear Lake, IA and Faribault, MN. We serve nearby towns within a practical travel radius — if you're unsure, enter your address in the booking form and we'll confirm availability.</p>
+        <div id="map" style="height:420px;"></div>
+        <p class="map-note">If your address is farther than our normal range we'll contact you with availability and travel pricing.</p>
+      </div>
+    </section>
+
+    <section id="about" class="section about">
+      <div class="container">
+        <h3>About OnTheGo Auto Pro</h3>
+        <p>Owned and operated by a mobile mechanic with years of experience, OnTheGo Auto Pro focuses on convenience, transparency, and getting you back on the road quickly. We carry common parts and tools for most light and medium repairs and use professional diagnostic tools to avoid guesswork.</p>
+        <ul>
+          <li>Licensed and insured mobile mechanic service</li>
+          <li>Clear estimates before any work</li>
+          <li>Satisfaction guarantee on most jobs</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="booking" class="section booking">
+      <div class="container">
+        <h3>Request a Quote / Book a Service</h3>
+        <p class="lead">Fill out the form and we'll reach out to confirm time and availability. Or call us directly at <a href="tel:+16414207755">(641) 420-7755</a>.</p>
+
+        <form id="booking-form" class="form" action="https://getform.io/f/agdjmlnb" method="POST">
+  <input type="hidden" name="_redirect" value="thankyou.html">
+          <div class="form-row">
+            <label for="name">Full name</label>
+            <input id="name" name="name" required>
+          </div>
+          <div class="form-row">
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" required>
+          </div>
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required>
+          </div>
+          <div class="form-row">
+            <label for="address">Address (where we should come)</label>
+            <input id="address" name="address" required placeholder="Street, City, State">
+          </div>
+          <div class="form-row">
+            <label for="vehicle">Vehicle (make, model, year)</label>
+            <input id="vehicle" name="vehicle">
+          </div>
+          <div class="form-row">
+            <label for="service-needed">Describe the issue or service needed</label>
+            <textarea id="service-needed" name="service-needed" rows="4" required></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn-primary" type="submit">Send Request</button>
+            <button class="btn-ghost" type="button" onclick="callNow()">Call Now</button>
+          </div>
+
+          <p class="form-privacy">By submitting you agree to be contacted about this booking. We respect your privacy.</p>
+          <div id="form-message" class="form-message" aria-live="polite"></div>
+        </form>
+
+        <p class="contact-line">Email: <a href="mailto:Barney.leng@onthegoautopro24.com">Barney.leng@onthegoautopro24.com</a> · Address examples: 5238 Powers Ave, Clear Lake, IA · 1709 Westwood Drive, Faribault, MN</p>
+      </div>
+    </section>
+
+    <section id="testimonials" class="section testimonials">
+      <div class="container">
+        <h3>Testimonials</h3>
+        <div class="test-grid">
+          <blockquote>"Saved me on the highway — came quick and fixed my alternator on the spot. Highly recommend." — A. Johnson</blockquote>
+          <blockquote>"Great price and honest diagnosis. Will use again." — M. Carter</blockquote>
+        </div>
+        <p class="add-your-own">Have feedback? Reply to our email or include it in your booking form and we may feature it here.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>OnTheGo Auto Pro</strong><br>
+        (641) 420-7755 · <a href="mailto:Barney.leng@onthegoautopro24.com">Barney.leng@onthegoautopro24.com</a>
+      </div>
+      <div class="social">
+        <a href="#" aria-label="Facebook (replace with your page)">Facebook</a> · <a href="#" aria-label="Instagram (replace with your page)">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Initialize simple details used by the map script
+    window.__OGAP_CONFIG = {
+      phone: "+16414207755",
+      serviceCenters: [
+        {name:"Clear Lake, IA", lat:43.1394, lng:-93.3766},
+        {name:"Faribault, MN", lat:44.2853, lng:-93.2683}
+      ]
+    };
+  </script>
+  <!-- Leaflet for map (client loads from CDN) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="" crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="" crossorigin=""></script>
+</body>
+</html>
